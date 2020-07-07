@@ -1,4 +1,4 @@
-
+#Adds File Deletion Choices to the Registry and Calls Them When Running the Disk Cleanup Utility. As a Side Effect, Using the Disk Cleanup Utility This Way Skips the Scanning Phase.
 
 if (Test-Path("HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\")){
     New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Active Setup Temp Folders" -Name "StateFlags0010" -Value "2" -PropertyType DWORD -Force
