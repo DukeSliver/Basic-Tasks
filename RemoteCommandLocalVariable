@@ -1,0 +1,8 @@
+#This is a solution I found that stores the result of a remote command in a local variable.
+#This isn't mine, I just didn't want to lose this once I found it. Author is Martin Brandl on Stack OverFlow: https://stackoverflow.com/questions/37719654/declare-variable-over-sessions
+$var
+function do-function{
+    $var = "Insert Remote Command Here"
+    return $var
+}
+$var = invoke-command -ComputerName NameOfComputer -scriptblock  ${function:do-function}
